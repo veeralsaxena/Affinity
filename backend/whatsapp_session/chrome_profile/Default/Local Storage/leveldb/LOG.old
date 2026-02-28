@@ -1,0 +1,6 @@
+2026/03/01-04:18:51.069 9b404 Reusing MANIFEST /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/03/01-04:18:51.071 9b404 Recovering log #3
+2026/03/01-04:18:51.071 9b404 Reusing old log /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/Local Storage/leveldb/000003.log 
+2026/03/01-04:20:52.863 9b407 Level-0 table #5: started
+2026/03/01-04:20:52.867 9b407 Level-0 table #5: 21350 bytes OK
+2026/03/01-04:20:52.869 9b407 Delete type=0 #3
