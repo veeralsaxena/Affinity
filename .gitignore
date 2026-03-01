@@ -1,3 +1,19 @@
+# Environment files
 .env
 backend/.env
-.env
+
+# Python
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# WhatsApp session data (sensitive, large)
+backend/whatsapp_session/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+
+# OS
+.DS_Store
+Thumbs.db
