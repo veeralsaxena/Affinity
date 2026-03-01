@@ -1,4 +1,4 @@
-# Synchrony — Autonomous Personal Relationship Intelligence 🧠💗
+# Affinity — Autonomous Personal Relationship Intelligence 🧠💗
 
 **A multi-agent, 8-layer behavioral analysis platform powered by LangGraph and Gemini.**
 
@@ -352,7 +352,7 @@ The web application demonstrates the **core algorithmic intelligence** that woul
 
 ---
 
-## 🏆 Why This Wins
+## Plus points!!
 
 1. **Not a Simple LLM Call** — 8-layer hybrid scoring where 6/8 layers are 100% deterministic
 2. **Real Behavioral Science** — Gottman's 5:1 ratio, Shannon entropy, KL divergence, Sørensen–Dice mirroring
