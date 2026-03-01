@@ -446,7 +446,10 @@ def get_dashboard(
                 "heat_score": a.heat_score,
                 "decay_score": a.decay_score,
                 "route": a.route,
+                "report": a.report,
                 "nudges": a.nudges,
+                "scoring_layers": a.scoring_layers,
+                "message_count": a.message_count,
                 "created_at": a.created_at.isoformat() if a.created_at else None,
             }
             for a in recent_analyses
@@ -484,6 +487,13 @@ class WhatsAppReadRequest(BaseModel):
     contact_name: str
     limit: int = 50
 
+class WhatsAppAutoIngestRequest(BaseModel):
+    contact_name: str
+
+class WhatsAppSendRequest(BaseModel):
+    contact_name: str
+    message: str
+
 @app.post("/whatsapp/read")
 async def whatsapp_read(
     req: WhatsAppReadRequest,
@@ -506,10 +516,19 @@ async def whatsapp_send(
 ):
     """
     Send a message to a WhatsApp contact using Playwright automation.
-    The browser types the message and presses Enter — visible in headed mode
-    so judges can watch the AI interact with WhatsApp in real-time.
+    The browser types the message but does not press Enter, allowing the user
+    to review the AI drafted message before sending.
     """
     wa = get_whatsapp()
+    
+    # Auto-reconnect if Uvicorn worker refreshed but session is saved
+    if not wa.connected:
+        status = await wa.get_status()
+        if not status.get("connected"):
+            res = await wa.connect()
+            if res.get("qr_needed"):
+                raise HTTPException(status_code=400, detail="WhatsApp disconnected. Please click 'Connect WhatsApp' on the Dashboard first.")
+
     result = await wa.send_message(req.contact_name, req.message)
 
     # Log to episodic memory
@@ -538,22 +557,28 @@ async def whatsapp_auto_ingest(
     Pull messages LIVE from WhatsApp, then run the full 8-layer analysis pipeline.
     This is the autonomous data ingestion described in the research document.
     """
+    print(f"[DEBUG] Starting auto_ingest for {req.contact_name}")
     wa = get_whatsapp()
     ingest_result = await wa.auto_ingest(req.contact_name)
+
+    print(f"[DEBUG] Playwright scraping finished. Status: {ingest_result.get('status')}")
 
     if ingest_result.get("status") != "success":
         raise HTTPException(status_code=400, detail=ingest_result.get("error", "Failed to read messages"))
 
     messages = ingest_result["messages"]
+    print(f"[DEBUG] Extracted {len(messages)} messages. Starting pipeline...")
     if not messages:
         raise HTTPException(status_code=400, detail="No messages found for this contact")
 
     # Run pipeline
+    print(f"[DEBUG] Calling analyze_relationship...")
     result = analyze_relationship(
         raw_messages=messages,
         user_id=str(current_user.id),
         target_person=req.contact_name,
     )
+    print(f"[DEBUG] Pipeline finished!")
 
     # Save to DB
     heat = result.get("heat", 0)
@@ -628,6 +653,22 @@ async def whatsapp_auto_ingest(
             "status": status,
         },
     }
+
+
+@app.post("/whatsapp/send")
+async def whatsapp_send(
+    req: WhatsAppSendRequest,
+    current_user: models.User = Depends(get_current_user),
+):
+    """
+    Commands the Playwright browser to physically open the chat and type/send the drafted message.
+    """
+    wa = get_whatsapp()
+    res = await wa.send_message(req.contact_name, req.message)
+    if res.get("status") != "success":
+        raise HTTPException(status_code=400, detail=res.get("error", "Failed to send message"))
+    
+    return {"status": "success", "message": "Message sent!"}
 
 
 @app.post("/whatsapp/disconnect")

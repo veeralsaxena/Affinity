@@ -1,52 +1,18 @@
-2026/03/01-04:18:52.801 9b3b2 Reusing MANIFEST /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/03/01-04:18:52.802 9b3b2 Recovering log #303
-2026/03/01-04:18:52.807 9b3b2 Reusing old log /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000303.log 
-2026/03/01-04:18:58.249 9b3b4 Level-0 table #316: started
-2026/03/01-04:18:58.262 9b3b4 Level-0 table #316: 1078095 bytes OK
-2026/03/01-04:18:58.268 9b3b4 Delete type=0 #303
-2026/03/01-04:18:58.269 9b3b4 Compacting 1@1 + 9@2 files
-2026/03/01-04:18:58.298 9b3b4 Generated table #317@1: 55003 keys, 2221929 bytes
-2026/03/01-04:18:58.319 9b3b4 Generated table #318@1: 41861 keys, 2204030 bytes
-2026/03/01-04:18:58.327 9b3b4 Generated table #319@1: 3190 keys, 2158535 bytes
-2026/03/01-04:18:58.340 9b3b4 Generated table #320@1: 14838 keys, 2187097 bytes
-2026/03/01-04:18:58.361 9b3b4 Generated table #321@1: 33549 keys, 2229707 bytes
-2026/03/01-04:18:58.373 9b3b4 Generated table #322@1: 17963 keys, 2146923 bytes
-2026/03/01-04:18:58.397 9b3b4 Generated table #323@1: 101205 keys, 2253418 bytes
-2026/03/01-04:18:58.420 9b3b4 Generated table #324@1: 98636 keys, 2250484 bytes
-2026/03/01-04:18:58.424 9b3b4 Generated table #325@1: 6354 keys, 339330 bytes
-2026/03/01-04:18:58.424 9b3b4 Compacted 1@1 + 9@2 files => 17991453 bytes
-2026/03/01-04:18:58.425 9b3b4 compacted to: files[ 0 0 9 0 0 0 0 ]
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #316
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #312
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #306
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #307
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #313
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #305
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #311
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #310
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #309
-2026/03/01-04:18:58.425 9b3b4 Delete type=2 #308
-2026/03/01-04:19:51.828 9b3be Level-0 table #327: started
-2026/03/01-04:19:51.849 9b3be Level-0 table #327: 1113585 bytes OK
-2026/03/01-04:19:51.851 9b3be Delete type=0 #315
-2026/03/01-04:20:04.488 9b3b4 Compacting 1@1 + 8@2 files
-2026/03/01-04:20:04.532 9b3b4 Generated table #328@1: 56851 keys, 2224275 bytes
-2026/03/01-04:20:04.557 9b3b4 Generated table #329@1: 45523 keys, 2208201 bytes
-2026/03/01-04:20:04.566 9b3b4 Generated table #330@1: 3106 keys, 2164736 bytes
-2026/03/01-04:20:04.580 9b3b4 Generated table #331@1: 13443 keys, 2180533 bytes
-2026/03/01-04:20:04.600 9b3b4 Generated table #332@1: 33462 keys, 2229085 bytes
-2026/03/01-04:20:04.611 9b3b4 Generated table #333@1: 13004 keys, 2146258 bytes
-2026/03/01-04:20:04.633 9b3b4 Generated table #334@1: 102123 keys, 2255338 bytes
-2026/03/01-04:20:04.655 9b3b4 Generated table #335@1: 101111 keys, 2251329 bytes
-2026/03/01-04:20:04.657 9b3b4 Generated table #336@1: 3357 keys, 136725 bytes
-2026/03/01-04:20:04.657 9b3b4 Compacted 1@1 + 8@2 files => 17796480 bytes
-2026/03/01-04:20:04.658 9b3b4 compacted to: files[ 0 0 10 0 0 0 0 ]
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #317
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #321
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #320
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #322
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #323
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #327
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #324
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #318
-2026/03/01-04:20:04.659 9b3b4 Delete type=2 #319
+2026/03/01-05:22:50.828 b4b5c Reusing MANIFEST /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/01-05:22:50.830 b4b5c Recovering log #374
+2026/03/01-05:22:50.844 b4b5c Reusing old log /Users/veeralsaxena/Hackthon/paradigm/Affinity/backend/whatsapp_session/chrome_profile/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000374.log 
+2026/03/01-05:23:00.532 b4b5e Level-0 table #387: started
+2026/03/01-05:23:00.544 b4b5e Level-0 table #387: 1123522 bytes OK
+2026/03/01-05:23:00.546 b4b5e Delete type=0 #374
+2026/03/01-05:23:00.666 b4b5c Compacting 1@1 + 9@2 files
+2026/03/01-05:23:00.690 b4b5c Generated table #388@1: 76213 keys, 2247277 bytes
+2026/03/01-05:23:00.713 b4b5c Generated table #389@1: 49251 keys, 2214617 bytes
+2026/03/01-05:23:00.723 b4b5c Generated table #390@1: 6301 keys, 2166089 bytes
+2026/03/01-05:23:00.732 b4b5c Generated table #391@1: 3352 keys, 2150428 bytes
+2026/03/01-05:23:00.754 b4b5c Generated table #392@1: 30453 keys, 2243941 bytes
+2026/03/01-05:23:00.770 b4b5c Generated table #393@1: 21280 keys, 2167442 bytes
+2026/03/01-05:23:00.792 b4b5c Generated table #394@1: 76510 keys, 2219667 bytes
+2026/03/01-05:23:00.816 b4b5c Generated table #395@1: 101041 keys, 2252618 bytes
+2026/03/01-05:23:00.826 b4b5c Generated table #396@1: 35087 keys, 860985 bytes
+2026/03/01-05:23:00.826 b4b5c Compacted 1@1 + 9@2 files => 18523064 bytes
+2026/03/01-05:23:00.827 b4b5c compacted to: files[ 0 0 10 0 0 0 0 ]

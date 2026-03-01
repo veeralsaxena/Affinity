@@ -365,9 +365,8 @@ class WhatsAppBrowser:
             await msg_input.fill(message)
             await asyncio.sleep(0.5)
 
-            # Press Enter to send
-            await self._page.keyboard.press("Enter")
-            await asyncio.sleep(1)
+            # REMOVED: await self._page.keyboard.press("Enter")
+            # We explicitly do NOT auto-send, so the user can review the AI draft.
 
             return {
                 "status": "sent",

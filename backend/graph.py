@@ -31,21 +31,20 @@ load_dotenv()
 
 # ─── Gemini Client Setup ────────────────────────────────────────────────────
 
-_gemini_model = None
+_gemini_client = None
 
 def _get_gemini():
     """Lazy-init Gemini client for ghost writing."""
-    global _gemini_model
-    if _gemini_model is None:
+    global _gemini_client
+    if _gemini_client is None:
         try:
-            import google.generativeai as genai
+            from google import genai
             api_key = os.getenv("GEMINI_API_KEY")
             if api_key:
-                genai.configure(api_key=api_key)
-                _gemini_model = genai.GenerativeModel("gemini-2.0-flash")
+                _gemini_client = genai.Client(api_key=api_key)
         except Exception as e:
             print(f"Gemini init failed: {e}")
-    return _gemini_model
+    return _gemini_client
 
 
 # ─── State Schema ────────────────────────────────────────────────────────────
@@ -265,8 +264,8 @@ def ghost_write_node(state: RelationshipState) -> dict:
     style_summary = style.get("style_summary", "No style data available.")
     memory_ctx = state.get("memory_context", "")
 
-    model = _get_gemini()
-    if model:
+    client = _get_gemini()
+    if client:
         prompt = f"""You are an expert at writing personal messages that sound 100% human.
 You must EXACTLY match the writing style described below. This is critical —
 the recipient must not be able to tell this was AI-generated.
@@ -294,12 +293,14 @@ Messages should feel natural, spontaneous, and authentic.
 Return a JSON object with key "nudges" containing an array of exactly 3 strings."""
 
         try:
-            response = model.generate_content(
-                prompt,
-                generation_config={
-                    "temperature": 0.7,
-                    "response_mime_type": "application/json",
-                },
+            from google import genai
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt,
+                config=genai.types.GenerateContentConfig(
+                    temperature=0.7,
+                    response_mime_type="application/json",
+                ),
             )
             data = json.loads(response.text)
             nudges = data.get("nudges", [])[:3]
