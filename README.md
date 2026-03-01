@@ -1,4 +1,7 @@
 # Affinity — Autonomous Personal Relationship Intelligence 🧠💗
+orionbits
+srishtee varule 
+veeral saxena
 
 **A multi-agent, 8-layer behavioral analysis platform powered by LangGraph and Gemini.**
 
